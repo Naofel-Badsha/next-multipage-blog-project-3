@@ -4,7 +4,7 @@ import React from 'react'
 const NewsPage = () => {
     return (
         <section className='py-12'>
-            News  dfgdgfdg
+            News  
         </section>
     )
 }

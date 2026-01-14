@@ -1,12 +1,14 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu'
 import { Switch } from '@/components/ui/switch'
 import Link from 'next/link'
-import React from 'react'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { usePathname } from 'next/navigation'
+import MobileMenu from './MobileMenu'
 
 const Navbar = () => {
-    return (
+  const pathname = usePathname()
+  return (
     <header className={`py-4 shadow-md `}>
       {/* ${isDarkMode ? "bg-gray-900 text-white" : ""} */}
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center sm:px-6 lg:px-8">
@@ -19,15 +21,13 @@ const Navbar = () => {
         <NavigationMenu className="hidden lg:flex ">
           <NavigationMenuList>
             <NavigationMenuItem className="flex space-x-8 items-center">
-              {/* ${pathname === '/news' ? 'text-red-500 font-semibold' : ''} */}
-              <NavigationMenuLink href="/news" className={` hover:text-red-500`}>
+              <NavigationMenuLink href="/news" className={`${pathname === '/news' ? 'text-red-500 font-semibold' : ''} hover:text-red-500`}>
                 News
               </NavigationMenuLink>
 
               <NavigationMenuLink
                 href="/services"
-                // ${pathname === '/services' ? 'text-red-500 font-semibold' : ''}
-                className={` hover:text-red-500`}
+                className={`${pathname === '/services' ? 'text-red-500 font-semibold' : ''} hover:text-red-500`}
               >
                 <NavigationMenuTrigger className="dark:bg-gray-900 dark:text-white">Sevices</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -50,16 +50,14 @@ const Navbar = () => {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuLink>
-              {/* ${pathname === '/about' ? 'text-red-500 font-semibold' : ''} */}
 
-              <NavigationMenuLink href="/about" className={` hover:text-red-500`}>
+              <NavigationMenuLink href="/about" className={`${pathname === '/about' ? 'text-red-500 font-semibold' : ''} hover:text-red-500`}>
                 About
               </NavigationMenuLink>
 
               <NavigationMenuLink
                 href="/contact"
-                // ${pathname === '/contact' ? 'text-red-500 font-semibold' : ''}
-                className={` hover:text-red-500`}
+                className={`${pathname === '/contact' ? 'text-red-500 font-semibold' : ''} hover:text-red-500`}
               >
                 Contact
               </NavigationMenuLink>
@@ -70,7 +68,7 @@ const Navbar = () => {
         {/*---------Color switcher and login button--------------*/}
         <div className="hidden lg:flex items-center space-x-4">
           {/* onClick={toggleTheme} */}
-          <div  className="flex items-center">
+          <div className="flex items-center">
             <span className="mr-2">Dark Mode</span>
             <Switch />
           </div>
@@ -78,14 +76,10 @@ const Navbar = () => {
         </div>
 
         {/*------------Mobile Hamburger Menu-----------------*/}
-        <div className="lg:hidden">
-           <Button variant="default"><AiOutlineMenu size={24}/> </Button>
-        </div>
-        {/* <MobileMenu/> */}
-       
+        <MobileMenu />
       </nav>
     </header>
-    )
+  )
 }
 
 export default Navbar
