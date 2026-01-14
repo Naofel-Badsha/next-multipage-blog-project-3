@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link href="/">Daily News</Link>
         </div>
 
-        {/* desktop menu */}
+        {/*------------------Desktop Menu--------------*/}
         <NavigationMenu className="hidden lg:flex ">
           <NavigationMenuList>
             <NavigationMenuItem className="flex space-x-8 items-center">
@@ -59,7 +59,7 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* color switcher and login button */}
+        {/*---------Color switcher and login button--------------*/}
         <div className="hidden lg:flex items-center space-x-4">
           <div onClick={toggleTheme} className="flex items-center">
             <span className="mr-2">Dark Mode</span>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <Button variant="default">Login</Button>
         </div>
 
-        {/* mobile hamburger menu */}
+        {/*------------Mobile Hamburger Menu-----------------*/}
         <MobileMenu/>
        
       </nav>
