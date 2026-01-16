@@ -1,9 +1,10 @@
+import { NewsCardProps, } from '@/app/types/news'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
-const NewsCard = () => {
+
+const NewsCard = ({item}: NewsCardProps) => {
     return (
         <section className="border p-4 rounded-md shadow-md">
             <Link href="#">
