@@ -2,7 +2,10 @@ import Image from "next/image";
 import Banner from "./components/shared/Banner";
 import NewsCard from "./components/shared/NewsCard";
 
-export default function Home() {
+const Home = async() => {
+    const data = await fetch('https://naofel-badsha.github.io/api/db.json')
+      const news = await data.json()
+      console.log(news)
   return (
     <div className="text-5xl py-24">
        <Banner />
@@ -16,3 +19,4 @@ export default function Home() {
       </div>
   );
 }
+export default Home;
