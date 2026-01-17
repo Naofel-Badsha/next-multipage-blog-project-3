@@ -18,8 +18,8 @@ const NewsCard = ({item}: NewsCardProps) => {
 
             </Link>
             <div className="">
-                <h2 className='text-2xl font-semibold my-3'>{item?.title}</h2>
-                <p className='mb-4 text-[18px]'>{item?.description}</p>
+                <h2 className='text-2xl font-semibold my-3'>{item?.title.substring(0, 50)}...</h2>
+                <p className='mb-4 text-[18px]'>{item?.description.substring(0, 100)}...</p>
                 <Link href={`/news/${item?._id}`}>
                     <Button variant="default">Read More</Button>
                 </Link>
