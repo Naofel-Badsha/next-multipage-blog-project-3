@@ -7,7 +7,7 @@ import Link from 'next/link'
 const NewsCard = ({item}: NewsCardProps) => {
     return (
         <section className="border p-4 rounded-md shadow-md">
-            <Link href="#">
+            <Link href={`/news/${item?._id}`}>
                 <Image
                     src={item?.imageUrl}
                     alt="Banner images"
@@ -18,9 +18,9 @@ const NewsCard = ({item}: NewsCardProps) => {
 
             </Link>
             <div className="">
-                <h2 className='text-2xl font-semibold my-3'>What To Expect From United Natural Foods Inc (UNFI) Q4 2024 Earni</h2>
-                <p className='mb-4 text-[18px]'>United Natural Foods Inc (UNFI) will release its Q4 2024 earnings on October 1, 2024</p>
-                <Link href="#">
+                <h2 className='text-2xl font-semibold my-3'>{item?.title}</h2>
+                <p className='mb-4 text-[18px]'>{item?.description}</p>
+                <Link href={`/news/${item?._id}`}>
                     <Button variant="default">Read More</Button>
                 </Link>
             </div>
