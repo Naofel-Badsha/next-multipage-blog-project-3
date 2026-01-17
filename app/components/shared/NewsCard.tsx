@@ -9,10 +9,10 @@ const NewsCard = ({item}: NewsCardProps) => {
         <section className="border p-4 rounded-md shadow-md">
             <Link href="#">
                 <Image
-                    src="/assets/banner.jpg"
+                    src={item?.imageUrl}
                     alt="Banner images"
-                    width={560}
-                    height={420}
+                    width={500}
+                    height={500}
                     className='mb-5 md:h-56 rounded-md hover:scale-105 cursor-pointer transition-all duration-200'
                 />
 
